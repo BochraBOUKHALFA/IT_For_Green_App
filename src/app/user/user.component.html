@@ -1,1 +1,75 @@
-<p>user works!</p>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Utilisateur</title>
+    <!-- Lien vers Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .user-info-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .user-info-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .user-info-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #086375;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Votre section d'en-tête -->
+    <section class="vw-100" style="background-color:#086375;">
+        <div>
+            <header class="p-3 text-white">
+                <div class="row container">
+                    <div class="col-sm-2">
+                        <a href="/">
+                            <img src="../../assets/logo1-transformed.PNG" class="img-fluid" class="bi me-2 pr-5"
+                                width="100" height="60" alt="Sample image"> <!-- Taille du logo ajustée ici -->
+                        </a>
+                    </div>
+                    <div class="col-8 pt-3">
+                        <ul class="nav">
+                            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <!-- Section pour les informations de l'utilisateur -->
+    <section class="container mt-5">
+        <div class="card user-info-card p-4">
+            <h4 class="user-info-title">Informations de l'utilisateur</h4>
+            <div class="mt-4">
+                <h5>Nom: Dupont</h5>
+                <p>Prénom: Jean</p>
+                <p>Téléphone: 0123456789</p>
+                <p>Classement: 5ème</p>
+                <p>Score: 80 points</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lien vers Bootstrap JS pour rendre le site interactif si besoin -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

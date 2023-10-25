@@ -5,70 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantons Ensemble!</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            padding: 2rem 0;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        #map-intro {
-            color: #555;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        b {
-            font-weight: bold;
-        }
-
-        i {
-            font-style: italic;
         }
 
         #map {
-            width: 90%;
+            width: 100%;
             height: 400px;
             background: grey;
-            margin: 2rem auto;
-            position: relative; 
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        #panel {
-            width: 100%;
-            height: 400px;
+        #user-info {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .element-à-risque {
-            overflow-x: auto;
-        }
-
-        h3 {
-            margin-top: 2rem;
-            color: #444;
+        #ranking {
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #fff;
         }
 
         code {
@@ -82,56 +47,53 @@
 
 <body>
     <section class="vw-100" style="background-color:#086375;">
-        <div >
-            <header class="p-3  text-white">
-                <div class="row container">
-                  <div class="col-sm-2">
-                    <a href="/" >
-                        <img src="../../assets/logo1-transformed.PNG"
-                        class="img-fluid" class="bi me-2 pr-5" width="170" height="110" alt="Sample image">
-                    </a>
-                  </div>
-                  <div class="col-8 pt-3">
+        <header class="p-3 text-white container">
+            <div class="d-flex justify-content-between">
+                <a href="/"><img src="../../assets/logo1-transformed.PNG" width="100" height="60" alt="Logo"></a>
+                <div>
                     <ul class="nav">
-                      <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                      <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                      <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                      <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                      <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                     </ul>
-                 </div>
-                 <div class="col pt-3">
-                    <div class="text-end">
-                      <a href="/signin" type="button" class="btn btn-outline-light me-2">Login</a>
-                      <a herf="/register" type="button" class="btn btn-warning">Sign-up</a>
-                    </div>
                 </div>
+                <div>
+                    <a href="/signin" type="button" class="btn btn-outline-light me-2">Login</a>
+                    <a href="/register" type="button" class="btn btn-warning">Sign-up</a>
                 </div>
-              </header>
-        
+            </div>
+        </header>
+    </section>
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Plantons Ensemble!</h1>
+        <div class="row">
+            <div class="col-lg-8">
+                <div id="map-intro" class="mb-4">
+                    <h2>Chaque Arbre Compte</h2>
+                    <p>La Terre a besoin de nous. Chaque arbre que nous plantons a un impact positif sur notre environnement. Utilisez cette carte pour identifier des lieux propices à la plantation et joignez-vous à nous dans cette mission!</p>
+                </div>
+                <div id="map"></div>
+                <div id="user-info">
+                    <p>Nom: Dupont</p>
+                    <p>Prénom: Jean</p>
+                    <p>Téléphone: 0123456789</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="ranking">
+                    <h3>Classement</h3>
+                    <ol>
+                        <li>Jean Dupont - 150 arbres</li>
+                        <li>Marie Martin - 120 arbres</li>
+                        <li>Lucas Leroy - 110 arbres</li>
+                        <!-- Vous pouvez continuer la liste ici. -->
+                    </ol>
+                </div>
+            </div>
         </div>
-        </section>
-        
-    <div class="container">
-
-        <h1>Plantons Ensemble!</h1>
-
-        <div id="map-intro">
-            <h2>Chaque Arbre Compte</h2>
-            <p>La Terre a besoin de nous. Chaque arbre que nous plantons a un impact positif sur notre environnement. Utilisez cette carte pour identifier des lieux propices à la plantation et joignez-vous à nous dans cette mission!</p>
-        </div>
-
-        <p>Centré initialement sur la <b>Porte de Brandebourg</b> à Berlin <i>(52.5159°N, 13.3777°E)</i>, cette carte vous permet de naviguer et de découvrir des zones idéales pour planter.</p>
-
-        <div id="map"></div>
-
-        <h3>Comment utiliser la carte?</h3>
-        <p>
-            Utilisez les méthodes <code>map.setCenter()</code> et <code>map.setZoom() </code> pour contrôler l'emplacement et le zoom de la carte. Sélectionnez une zone, identifiez un endroit pour planter un arbre, et joignez-vous à notre cause!
-        </p>
-
     </div>
-
 </body>
-
 </html>
