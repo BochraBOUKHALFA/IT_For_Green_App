@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { MapComponent } from './maps/maps.component';
 import { SigninComponentModal } from './modals/signin_modal/signin-modal.component';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'maps', component: MapComponent },
   { path: 'login', component: SigninComponentModal },
   { path: 'home' , component:HomeComponent},
+  { path: 'user' , component:UserComponent}
 
 ];
 
