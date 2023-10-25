@@ -1,51 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from  '@angular/forms';
 import { Router } from  '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-register',   
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   // isSubmitted  =  false;
-  registerForm!: FormGroup;
-  constructor(private router: Router,
-              private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+      
+  }
+  registerForm!: FormGroup;
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.registerForm = this.formBuilder.group({
-      firstNameControl: ['', Validators.required],
       lastNameControl: ['', Validators.required],
-      emailControl: ['', Validators.required],
-      phoneControl: ['', Validators.required],
+      firstNameControl: ['', Validators.required],
       loginControl: ['', Validators.required],
-      passwordControl: ['', Validators.required]
+      passwordControl: ['', Validators.required],
+      emailControl: ['', [Validators.required, Validators.email]],
+      phoneControl: ['']
     });
   }
 
-  get f() { return this.registerForm.controls; }
-
-  onRegisterParent(){
-    const userData:Object = {
-      "login": this.registerForm.value.loginControl,
-      "firstName": this.registerForm.value.firstNameControl,
-      "lastName": this.registerForm.value.lastNameControl,
-      "email": this.registerForm.value.emailControl,
-      "phoneNumber": this.registerForm.value.phoneControl,
-      "password": this.registerForm.value.passwordControl
+  onRegisterParent() {
+    if (this.registerForm.valid) {
+      const formData = this.registerForm.value;
+  
+      this.http.post('YOUR_API_ENDPOINT', formData).subscribe(
+        (response) => {
+          // Handle a successful registration response, e.g., show a success message.
+          console.log('Registration successful', response);
+        },
+        (error) => {
+          // Handle registration errors, e.g., show an error message.
+          console.error('Registration error', error);
+        }
+      );
     }
   }
-  onRegisterAccompanist(){
-    const userData:Object = {
-      "login": this.registerForm.value.loginControl,
-      "firstName": this.registerForm.value.firstNameControl,
-      "lastName": this.registerForm.value.lastNameControl,
-      "email": this.registerForm.value.emailControl,
-      "password": this.registerForm.value.passwordControl,
-      "phoneNumber": this.registerForm.value.phoneControl,
-      "profileImage": ' '
-    }
-  }
-
 }
