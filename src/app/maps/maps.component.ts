@@ -48,7 +48,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     map.setZoom(14);
   }
 
-  addMarkersToMap() {
+addMarkersToMap() {
     const locations = [
         { lat: 48.8566, lng: 2.3522, text: "Nombre d'arbre ", count: 10, maxCount: 20 },
         { lat: 48.8606, lng: 2.3376, text: "Nombre d'arbre ", count: 5, maxCount: 15 },
