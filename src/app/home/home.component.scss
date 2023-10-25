@@ -1,0 +1,22 @@
+/* styles.css */
+
+/* Style for the text inside the h1 tag */
+h1 {
+    color: white;
+}
+
+/* Style for the "Go" button */
+.btnw {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    font-size: 16px; /* Font size of the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor style on hover */
+}
+
+/* Add hover effect */
+.btnw:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
