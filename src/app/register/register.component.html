@@ -1,0 +1,71 @@
+<section class="vh-100" style="background-color: #086375;">
+<div class="container-fluid h-custom "> 
+    <mat-icon style="padding-top: 30px; margin-left: 40px" routerLink="/signin" >reply</mat-icon>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="../../assets/logo1.PNG"
+               class="img-fluid" alt="Sample image">
+        </div>
+
+    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+      <form [formGroup]="registerForm">
+        <div class="divider d-flex align-items-center my-4">
+          <p class="text-center fw-bold mx-3 mb-0"> Welcome!</p>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control form-control-lg"
+                 placeholder="Entrez votre nom" formControlName="lastNameControl" />
+          <label class="form-label" >Nom</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control form-control-lg"
+                 placeholder="Entrez votre prénom" formControlName="firstNameControl" />
+          <label class="form-label" >Prénom</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control form-control-lg"
+                 placeholder="Entrez votre login"  formControlName="loginControl" />
+
+          <label class="form-label">Login</label>
+        </div>
+
+        <div class="form-outline mb-3">
+          <input type="password" class="form-control form-control-lg"
+                 placeholder="Entrez votre mot de passe" formControlName="passwordControl"/>
+          <label class="form-label">Mot de passe</label>
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="email" class="form-control form-control-lg"
+                 placeholder="Entrez votre adresse mail"  formControlName="emailControl" />
+
+          <label class="form-label">Adresse mail</label>
+        </div>
+        <div class="form-outline mb-4">
+          <input type="email" class="form-control form-control-lg"
+                 placeholder="Entrez votre phone"  formControlName="phoneControl" />
+
+          <label class="form-label">Numéro de téléphone</label>
+        </div>
+
+        <div class=" row text-center text-lg-start mt-4 pt-2">
+
+          <button type="submit" value="Register" mat-raised-button color="accent" (click)="onRegisterParent()" class="btn btn-primary btn-lg"
+                >S'inscrire
+          </button>
+          <p class="small fw-bold mt-2 pt-1 mb-0" style="color: aliceblue;">Vous êtes déja inscrit ? <a href="/signin" >SignIn</a></p>
+          <br/>
+          <br/>
+          <br/>
+
+        </div>
+
+      </form>
+    </div>
+
+</div>
+</div>
+</section>
