@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from  '@angular/forms';
 import { Router } from  '@angular/router';
@@ -8,40 +9,30 @@ import { Router } from  '@angular/router';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
-export class SigninComponent implements OnInit {
-  email: string = '';
-  password: string = '';
+export class SigninComponent {
+  loginForm: FormGroup;
 
-  token!: Object;
-  isSubmitted  =  false;
-  test!: string | null;
-
-  loginForm: FormGroup = new FormGroup({
-    loginForm: new FormControl({value:'',disabled:false}),
-  });
-
-  constructor(
-    private router: Router, private formBuilder: FormBuilder,
-             ) { }
-    ngOnInit() {
-      this.loginForm  =  this.formBuilder.group({
-          username: ['', Validators.required],
-          password: ['', Validators.required]
-      });
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
-  async onLoginUser(){
-   
-      // Replace this with your actual sign-in logic
-      if (this.email === 'user@example.com' && this.password === 'password') {
-        alert('Sign-in successful');
-      } else {
-        alert('Sign-in failed');
+    onLoginUser() {
+      if (this.loginForm.valid) {
+        const formData = this.loginForm.value;
+        console.log('this is login', this.loginForm.value);
+      
+        this.http.get('https://sellersapi.onrender.com/connection_user', formData).subscribe(
+          (response) => {
+            console.log('Sign-in successful', response);
+          
+          },
+          (error) => {
+            console.error('Sign-in error', error);
+          }
+        );
       }
-    
-
+    }
   }
-
-  
-
-}
