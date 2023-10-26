@@ -50,7 +50,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
 addMarkersToMap() {
     const locations = [
-        { lat: 48.8566, lng: 2.3522, text: "Nombre d'arbre ", count: 10, maxCount: 20 },
+        { lat: 48.8566, lng: 2.3522, text: "Nombre d'arbre ", count: 10, maxCount: 20 , imageUrl: "../" },
         { lat: 48.8606, lng: 2.3376, text: "Nombre d'arbre ", count: 5, maxCount: 15 },
         { lat: 48.8584, lng: 2.2945, text: "Nombre d'arbre ", count: 9, maxCount: 18 }
     ];
