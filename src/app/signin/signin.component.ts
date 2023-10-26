@@ -21,7 +21,8 @@ export class SigninComponent {
 
     onLoginUser() {
       if (this.loginForm.valid) {
-        const formData = this.loginForm.value;      
+        const formData = this.loginForm.value;  
+        console.log("this is it")    
         this.http.post('https://sellersapi.onrender.com/connection_user', formData, { observe: 'response' }).subscribe(
         (response: HttpResponse<any>) => {
        if (response.body.code === 200) {
