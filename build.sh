@@ -1,9 +1,10 @@
-sudo apt-get update
-sudo apt-get install -y curl
+NODE_VERSION=$(node -pe "require('./package.json').engines.node")
 
-# Téléchargement et exécution du script d'installation de NodeSource pour LTS
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
-node -v
+# Install Node.js using nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install $NODE_VERSION
+
+# Install dependencies and build your application
 npm install
 npm start
