@@ -1,6 +1,9 @@
 {
   "name": "green",
   "version": "0.0.0",
+    "engines": {
+    "node": "20.1.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
